@@ -8,13 +8,16 @@
 		{
 			"path": "pages/home/index"
 		},
-		// 商城
+		// 分类
 		{
 			"path": "pages/mall/index"
 		},
-		// 社区
 		{
 			"path": "pages/community/index"
+		},
+		// 购物车
+		{
+			"path": "pages/cart/index"
 		},
 		// 我的
 		{
@@ -50,10 +53,7 @@
 			{
 				"path": "pages/classify"
 			},
-			// 购物车页
-			{
-				"path": "pages/shopping-cart"
-			},
+
 			// 商品详情
 			{
 				"path": "pages/goods/detail"
@@ -216,26 +216,34 @@
 		"color": "#8F92A1",
 		"selectedColor": "#171717",
 		"list": [{
-			"text": "首页",
-			"pagePath": "pages/home/index",
-			"iconPath": "./static/tabbar/home.png",
-			"selectedIconPath": "./static/tabbar/home_active.png"
-		}, {
-			"text": "商城",
-			"pagePath": "pages/mall/index",
-			"iconPath": "./static/tabbar/mall.png",
-			"selectedIconPath": "./static/tabbar/mall_active.png"
-		}, {
-			"text": "社区",
-			"pagePath": "pages/community/index",
-			"iconPath": "./static/tabbar/community.png",
-			"selectedIconPath": "./static/tabbar/community_active.png"
-		}, {
-			"text": "我的",
-			"pagePath": "pages/mine/index",
-			"iconPath": "./static/tabbar/user.png",
-			"selectedIconPath": "./static/tabbar/user_active.png"
-		}]
+				"text": "首页",
+				"pagePath": "pages/home/index",
+				"iconPath": "./static/tabbar/home.png",
+				"selectedIconPath": "./static/tabbar/home_active.png"
+			}, {
+				"text": "分类",
+				"pagePath": "pages/mall/index",
+				"iconPath": "./static/tabbar/mall.png",
+				"selectedIconPath": "./static/tabbar/mall_active.png"
+			},
+			{
+				"text": "分享",
+				"pagePath": "pages/community/index",
+				"iconPath": "./static/tabbar/mall.png",
+				"selectedIconPath": "./static/tabbar/mall_active.png"
+			},
+			{
+				"text": "购物车",
+				"pagePath": "pages/cart/index",
+				"iconPath": "./static/tabbar/community.png",
+				"selectedIconPath": "./static/tabbar/community_active.png"
+			}, {
+				"text": "我的",
+				"pagePath": "pages/mine/index",
+				"iconPath": "./static/tabbar/user.png",
+				"selectedIconPath": "./static/tabbar/user_active.png"
+			}
+		]
 	},
 	// 启动模式配置
 	"condition": {

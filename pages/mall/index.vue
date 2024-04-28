@@ -1,10 +1,10 @@
 <template>
 	<view class="page">
-		<Navbar title="全部分类"></Navbar>
+		<Navbar title="分类"></Navbar>
 		<!-- 搜索 -->
-		<view class="sarch">
+		<!-- <view class="sarch">
 			<u-search placeholder="商品/品牌"></u-search>
-		</view>
+		</view> -->
 
 		<view class="inner">
 			<!-- 侧栏 -->

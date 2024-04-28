@@ -57,11 +57,11 @@
 	import NavbarCitySearch from '@/components/navbar/navbar-city-search.vue';
 	import DialNav from '@/components/nav/dial-nav.vue';
 	import HorizontalScrollNav from '@/components/nav/horizontal-scroll-nav.vue';
-	import CardGoods from '@/pages/mall/components/card.vue';
+	import CardGoods from '@/pages/cart/components/card.vue';
 	import PostCardSimple from '@/pages/community/components/post-card-simple.vue';
 	import TitleOperate from '@/components/title-operate.vue';
-	import Poster from '@/pages/mall/components/poster.vue';
-	import Points from '@/pages/mall/components/points.vue';
+	import Poster from '@/pages/home/components/poster.vue';
+	import Points from '@/pages/home/components/points.vue';
 	// 导入假数据
 	import {
 		goodsList,
@@ -70,9 +70,7 @@
 		dialNavList,
 		pointsList
 	} from '@/static/test-data.js';
-	// import {
-	// 	dialNavListHome
-	// } from '@/static/system-data.js'
+
 	export default {
 		components: {
 			NavbarCitySearch,

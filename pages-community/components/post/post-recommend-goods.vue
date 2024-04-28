@@ -15,45 +15,50 @@
 </template>
 
 <script>
-import CardGoods from '@/pages/mall/components/card.vue';
-import { goodsList } from '@/static/test-data.js';
-export default {
-	components: { CardGoods },
-	props: {},
-	data() {
-		return {
-			show: false,
-			// 推荐商品列表
-			recommendGoodsList: []
-		};
-	},
-	methods: {
-		// 打开popup
-		open() {
-			this.show = true;
-			this.getRecommendGoods();
+	import CardGoods from '@/pages/cart/components/card.vue';
+	import {
+		goodsList
+	} from '@/static/test-data.js';
+	export default {
+		components: {
+			CardGoods
 		},
-
-		// 关闭
-		close() {
-			this.show = false;
+		props: {},
+		data() {
+			return {
+				show: false,
+				// 推荐商品列表
+				recommendGoodsList: []
+			};
 		},
+		methods: {
+			// 打开popup
+			open() {
+				this.show = true;
+				this.getRecommendGoods();
+			},
 
-		// 加载推荐商品
-		getRecommendGoods() {
-			this.$nextTick(() => {
-				this.recommendGoodsList = JSON.parse(JSON.stringify(goodsList));
-			});
+			// 关闭
+			close() {
+				this.show = false;
+			},
+
+			// 加载推荐商品
+			getRecommendGoods() {
+				this.$nextTick(() => {
+					this.recommendGoodsList = JSON.parse(JSON.stringify(goodsList));
+				});
+			}
 		}
-	}
-};
+	};
 </script>
 
 <style lang="scss" scoped>
-.header {
-	padding: 26rpx 32rpx;
-}
-.list {
-	padding: 30rpx;
-}
+	.header {
+		padding: 26rpx 32rpx;
+	}
+
+	.list {
+		padding: 30rpx;
+	}
 </style>
