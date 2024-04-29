@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="88px" src="./static/app/logo.png" />
+  <img width="88px" src="http://120.76.202.58/static/app/logo.png" />
 </p>
 
 <h3 align="center"><b>小友优选</b> <sup><em>(UShop)</em></sup></h3>

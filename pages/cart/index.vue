@@ -144,7 +144,7 @@
 <style lang="scss" scoped>
 	.page {
 		background: $app-theme-bg-gray-color;
-		padding: 24rpx;
+		padding: 0rpx 24rpx;
 	}
 
 	/deep/.u-icon {

@@ -214,7 +214,7 @@
 	// tabbar配置
 	"tabBar": {
 		"color": "#8F92A1",
-		"selectedColor": "#171717",
+		"selectedColor": "#5691fe",
 		"list": [{
 				"text": "首页",
 				"pagePath": "pages/home/index",
@@ -223,30 +223,31 @@
 			}, {
 				"text": "分类",
 				"pagePath": "pages/mall/index",
-				"iconPath": "./static/tabbar/mall.png",
-				"selectedIconPath": "./static/tabbar/mall_active.png"
+				"iconPath": "./static/tabbar/category.png",
+				"selectedIconPath": "./static/tabbar/category-active.png"
 			},
 			{
 				"text": "分享",
 				"pagePath": "pages/community/index",
-				"iconPath": "./static/tabbar/mall.png",
-				"selectedIconPath": "./static/tabbar/mall_active.png"
+				"iconPath": "./static/tabbar/community.png",
+				"selectedIconPath": "./static/tabbar/community-active.png"
 			},
 			{
 				"text": "购物车",
 				"pagePath": "pages/cart/index",
-				"iconPath": "./static/tabbar/community.png",
-				"selectedIconPath": "./static/tabbar/community_active.png"
+				"iconPath": "./static/tabbar/car.png",
+				"selectedIconPath": "./static/tabbar/car-active.png"
 			}, {
 				"text": "我的",
 				"pagePath": "pages/mine/index",
-				"iconPath": "./static/tabbar/user.png",
-				"selectedIconPath": "./static/tabbar/user_active.png"
+				"iconPath": "./static/tabbar/mine.png",
+				"selectedIconPath": "./static/tabbar/mine-active.png"
 			}
 		]
 	},
 	// 启动模式配置
 	"condition": {
 
-	}
+	},
+	"lazyCodeLoading": "requiredComponents"
 }

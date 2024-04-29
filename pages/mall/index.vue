@@ -5,7 +5,6 @@
 		<!-- <view class="sarch">
 			<u-search placeholder="商品/品牌"></u-search>
 		</view> -->
-
 		<view class="inner">
 			<!-- 侧栏 -->
 			<view class="aside">
@@ -18,15 +17,21 @@
 			<!-- 主内容 -->
 			<scroll-view class="conter" scroll-y="true">
 				<view v-for="(item, index) in classifyList" :key="index">
-					<view class="item" v-if="index == sideIndex">
-						<view class="title">{{ item.cateName }}</view>
+					<view class="recommendGoods" v-if="index == sideIndex">
 						<view class="list">
-							<view class="item" v-for="(child, childIndex) in item.children" :key="childIndex"
-								@click="goGoodsList(child)">
-								<u-image height="120rpx" width="120rpox" mode="widthFix" :src="child.pic"></u-image>
-								<view class="name">{{ child.cateName }}</view>
-							</view>
+							<u-waterfall ref="topicWaterFall" v-model="item.children" marginLeft="7rpx"
+								marginRight="7rpx">
+								<template v-slot:left="{ leftList }">
+									<CardGoods v-for="(data, i) in leftList" :key="i" :data="data">
+									</CardGoods>
+								</template>
+								<template v-slot:right="{ rightList }">
+									<CardGoods v-for="(data, i) in rightList" :key="i" :data="data">
+									</CardGoods>
+								</template>
+							</u-waterfall>
 						</view>
+
 						<NoData height="50vh" v-if="item.children.length == 0"></NoData>
 					</view>
 				</view>
@@ -37,8 +42,11 @@
 </template>
 
 <script>
-	import NavbarSearch from '@/components/navbar/navbar-search.vue';
 	import Navbar from '@/components/navbar/navbar.vue';
+	import CardGoods from '@/pages/cart/components/card.vue';
+	import {
+		goodsList
+	} from '@/static/test-data.js';
 	export default {
 		data() {
 			return {
@@ -48,11 +56,12 @@
 				sideIndex: 0,
 				// 传参id
 				queryClassifyId: ''
+
 			};
 		},
 		components: {
-			NavbarSearch,
-			Navbar
+			Navbar,
+			CardGoods
 		},
 		onLoad(options) {
 			if (options.id) {
@@ -77,44 +86,19 @@
 			getClassifyList() {
 				this.classifyList = [{
 						cateName: '推荐',
-						children: [{
-								cateName: '保健品',
-								pic: require('@/static/goods/1.png')
-							},
-							{
-								cateName: '保健品',
-								pic: require('@/static/goods/1.png')
-							},
-							{
-								cateName: '保健品',
-								pic: require('@/static/goods/1.png')
-							},
-							{
-								cateName: '保健品',
-								pic: require('@/static/goods/1.png')
-							}
-						]
+						children: JSON.parse(JSON.stringify(goodsList))
 					},
 					{
 						cateName: '百货',
-						children: [{
-							cateName: '卫生纸',
-							pic: require('@/static/goods/1.png')
-						}]
+						children: JSON.parse(JSON.stringify(goodsList))
 					},
 					{
 						cateName: '服饰',
-						children: [{
-							cateName: '卫衣',
-							pic: require('@/static/goods/1.png')
-						}]
+						children: JSON.parse(JSON.stringify(goodsList))
 					},
 					{
 						cateName: '运动',
-						children: [{
-							cateName: '篮球',
-							pic: require('@/static/goods/1.png')
-						}]
+						children: JSON.parse(JSON.stringify(goodsList))
 					}
 				];
 				this.changeClassifyById();
@@ -142,6 +126,13 @@
 </script>
 
 <style lang="scss" scoped>
+	// .list {
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// 	justify-content: space-between;
+	// 	padding: 0 30rpx;
+	// }
+
 	.page {
 		background: $app-theme-bg-color;
 
@@ -193,41 +184,9 @@
 			.conter {
 				padding: 30rpx 40rpx 30rpx 40rpx;
 
-				.item {
-					.title {
-						font-size: 30rpx;
-						font-family: PingFang-SC-Regular, PingFang-SC;
-						font-weight: 400;
-						color: $app-theme-text-black-color;
-						padding: 30rpx 0;
-					}
-
+				.recommendGoods {
 					.list {
-						display: flex;
-						justify-content: flex-start;
-						align-items: flex-start;
-						flex-wrap: wrap;
-
-						.item {
-							width: 120rpx;
-							margin-bottom: 30rpx;
-							margin-right: 56rpx;
-
-							&:nth-child(3n) {
-								margin-right: 0;
-							}
-
-							.picture {}
-
-							.name {
-								font-size: 24rpx;
-								font-family: PingFang-SC-Regular, PingFang-SC;
-								font-weight: 400;
-								color: $app-theme-text-gray-color;
-								text-align: center;
-								margin-top: 12rpx;
-							}
-						}
+						padding: 0 30rpx;
 					}
 				}
 			}

@@ -11,7 +11,7 @@
 					<view class="card " v-if="currentTab == 0">
 						<view class="date">{{ msgCommunity.time }}</view>
 						<view class="inner community">
-							<u-avatar size="100" src="../../../static/user/1.png"></u-avatar>
+							<u-avatar size="100" src="http://120.76.202.58/static/user/1.png"></u-avatar>
 							<view class="right">
 								<view class="info">
 									<view class="name">{{ msgCommunity.name }}</view>
@@ -40,125 +40,140 @@
 </template>
 
 <script>
-import IconLabelNav from '@/components/nav/icon-label-nav.vue';
-export default {
-	components: {
-		IconLabelNav
-	},
-	data() {
-		return {
-			// tab 配置
-			currentTab: 0,
-			tabOps: [
-				{ label: '社区消息', icon: require('@/pages-mine/static/message-community.png'), iconActive: require('@/pages-mine/static/message-community-active.png') },
-				{ label: '系统消息', icon: require('@/pages-mine/static/message-system.png'), iconActive: require('@/pages-mine/static/message-system-active.png') }
-			],
-			// 假数据
-			communityList: [
-				{
-					time: '2021-07-21',
-					name: '演示用户2',
-					content: '点赞了你的帖子“吃好睡好身体的额好'
-				},
-				{
-					time: '2021-07-21',
-					name: '演示用户3',
-					content: '点赞了你的帖子“吃好睡好身体的额好'
-				},
-				{
-					time: '2021-07-21',
-					name: '演示用户4',
-					content: '点赞了你的帖子“吃好睡好身体的额好'
-				}
-			],
-			systemList: [
-				{
-					time: '2021-07-21'
-				},
-				{
-					time: '2021-07-21'
-				},
-				{
-					time: '2021-07-21'
-				}
-			]
-		};
-	},
-	methods: {
-		// 切换tab
-		changeTab(e) {
-			this.currentTab = e.index;
+	import IconLabelNav from '@/components/nav/icon-label-nav.vue';
+	export default {
+		components: {
+			IconLabelNav
+		},
+		data() {
+			return {
+				// tab 配置
+				currentTab: 0,
+				tabOps: [{
+						label: '社区消息',
+						icon: require('@/pages-mine/static/message-community.png'),
+						iconActive: require('@/pages-mine/static/message-community-active.png')
+					},
+					{
+						label: '系统消息',
+						icon: require('@/pages-mine/static/message-system.png'),
+						iconActive: require('@/pages-mine/static/message-system-active.png')
+					}
+				],
+				// 假数据
+				communityList: [{
+						time: '2021-07-21',
+						name: '演示用户2',
+						content: '点赞了你的帖子“吃好睡好身体的额好'
+					},
+					{
+						time: '2021-07-21',
+						name: '演示用户3',
+						content: '点赞了你的帖子“吃好睡好身体的额好'
+					},
+					{
+						time: '2021-07-21',
+						name: '演示用户4',
+						content: '点赞了你的帖子“吃好睡好身体的额好'
+					}
+				],
+				systemList: [{
+						time: '2021-07-21'
+					},
+					{
+						time: '2021-07-21'
+					},
+					{
+						time: '2021-07-21'
+					}
+				]
+			};
+		},
+		methods: {
+			// 切换tab
+			changeTab(e) {
+				this.currentTab = e.index;
+			}
 		}
-	}
-};
+	};
 </script>
 
 <style lang="scss" scoped>
-.list {
-	.card {
-		margin-top: 20rpx;
-		margin-bottom: 20rpx;
-		.date {
-			font-size: 14px;
-			font-family: PingFangSC-Regular, PingFang SC;
-			font-weight: 400;
-			color: $app-theme-shop-gray-color;
-			margin-bottom: 16rpx;
-			text-align: center;
-		}
+	.list {
+		.card {
+			margin-top: 20rpx;
+			margin-bottom: 20rpx;
 
-		.inner {
-			margin: 30rpx;
-			padding: 30rpx;
-			background-color: $app-theme-bg-color;
-			box-shadow: $app-theme-shadow;
-			border-radius: 16rpx;
-			.right {
-				width: 80%;
-				margin-left: 20rpx;
+			.date {
+				font-size: 14px;
+				font-family: PingFangSC-Regular, PingFang SC;
+				font-weight: 400;
+				color: $app-theme-shop-gray-color;
+				margin-bottom: 16rpx;
+				text-align: center;
 			}
-			.info {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-end;
-				margin-bottom: 20rpx;
-				.name {
-					font-size: 28rpx;
-					color: $app-theme-text-black-color;
+
+			.inner {
+				margin: 30rpx;
+				padding: 30rpx;
+				background-color: $app-theme-bg-color;
+				box-shadow: $app-theme-shadow;
+				border-radius: 16rpx;
+
+				.right {
+					width: 80%;
+					margin-left: 20rpx;
 				}
-				.time {
+
+				.info {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-end;
+					margin-bottom: 20rpx;
+
+					.name {
+						font-size: 28rpx;
+						color: $app-theme-text-black-color;
+					}
+
+					.time {
+						font-size: 24rpx;
+						color: $app-theme-shop-gray-color;
+					}
+				}
+
+				.content {
 					font-size: 24rpx;
 					color: $app-theme-shop-gray-color;
 				}
 			}
-			.content {
-				font-size: 24rpx;
-				color: $app-theme-shop-gray-color;
+
+			.inner.community {
+				display: flex;
+				align-items: center;
+
+				.content {
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
 			}
-		}
-		.inner.community {
-			display: flex;
-			align-items: center;
-			.content {
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-			}
-		}
-		.inner.system {
-			.title {
-				font-size: 28rpx;
-				color: $app-theme-text-black-color;
-				margin-bottom: 20rpx;
-			}
-			.content {
-				text:nth-child(2) {
-					font-size: 24rpx;
-					color: $app-theme-color;
-					margin-left: 20rpx;
+
+			.inner.system {
+				.title {
+					font-size: 28rpx;
+					color: $app-theme-text-black-color;
+					margin-bottom: 20rpx;
+				}
+
+				.content {
+					text:nth-child(2) {
+						font-size: 24rpx;
+						color: $app-theme-color;
+						margin-left: 20rpx;
+					}
 				}
 			}
 		}
 	}
-}
 </style>

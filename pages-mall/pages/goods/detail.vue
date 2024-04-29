@@ -89,7 +89,7 @@
 				goodsType: 'normal',
 				// 假数据
 				goodsDetail: {
-					sliderImageArr: [require('@/static/goods/11.png')],
+					sliderImageArr: ['http://120.76.202.58/static/goods/11.png'],
 					price: 378,
 					sales: 650,
 					oldPrice: 516,
@@ -113,7 +113,7 @@
 							value: '3'
 						}
 					],
-					pics: require('@/static/goods/11.png')
+					pics: 'http://120.76.202.58/static/goods/11.png'
 				},
 				evaluateData: [{
 					star: 4,
